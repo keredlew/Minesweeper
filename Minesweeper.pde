@@ -30,7 +30,7 @@ public void setBombs()
 }
 public void draw ()
 {
-    background( 0 );
+    background( 1 );
     if(isWon() == true)
     {
         displayWinningMessage();
@@ -118,7 +118,7 @@ public class MSButton
         y = r*height;
         label = "";
         marked = clicked = false;
-        Interactive.add( this ); // register it with the manager
+        Interactive.add( this );
     }
     public boolean isMarked()
     {
@@ -131,7 +131,6 @@ public class MSButton
     public void mousePressed() 
     {
         clicked = true;
-        //your code here
         if(mouseButton == RIGHT)
         {
             if(marked == false)
