@@ -77,10 +77,10 @@ public void displayLosingMessage()
     buttons[4][1].setLabel("Y");
     buttons[4][2].setLabel("O");
     buttons[4][3].setLabel("U");
-    buttons[4][5].setLabel("L");
-    buttons[4][6].setLabel("O");
-    buttons[4][7].setLabel("S");
-    buttons[4][8].setLabel("E");
+    buttons[4][5].setLabel("S");
+    buttons[4][6].setLabel("U");
+    buttons[4][7].setLabel("C");
+    buttons[4][8].setLabel("C");
 }
 public void displayWinningMessage()
 {
@@ -163,7 +163,7 @@ public class MSButton
         if (marked)
             fill(0);
         else if(clicked && bombs.contains(this)) 
-            fill(255,0,0);
+            fill(0,0,255);
         else if(clicked)
             fill( 200 );
         else 
