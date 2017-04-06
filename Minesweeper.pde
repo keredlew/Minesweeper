@@ -7,11 +7,9 @@ private ArrayList <MSButton> bombs = new ArrayList <MSButton>(); //ArrayList of 
 void setup ()
 {
     size(400, 400);
-    textAlign(CENTER,CENTER);
-    
+    textAlign(CENTER,CENTER);   
     // make the manager
-    Interactive.make( this );
-    
+    Interactive.make( this );  
     //your code to declare and initialize buttons goes here
     buttons = new MSButton[NUM_ROWS][NUM_COLS];
     for(int row = 0; row < NUM_ROWS; row++)
@@ -52,15 +50,19 @@ public boolean isLost()
 public boolean isWon()
 {
     //your code here
-    for(int i = 0; i < bombs.size(); i++)
-        if(!bombs.get(i).isMarked())
-            return false;
+    {
     for(int r = 0; r < NUM_ROWS; r++)
-        for(int c = 0; c < NUM_COLS; c++)
-            if(!bombs.contains(buttons[r][c]))
-                if(!buttons[r][c].isClicked())
-                    return false;
-    return true;
+    {
+    for(int c = 0; c < NUM_COLS; c++)
+    {
+      if(!buttons[r][c].isClicked() == true && !bombs.contains(buttons[r][c]))
+      {
+        return false;
+      }
+    }
+  }
+  return true;
+}
 }
 public void displayLosingMessage()
 {
@@ -91,16 +93,13 @@ public void displayWinningMessage()
             buttons[r][c].setLabel("");
             buttons[r][c].setColr(255, 255, 0);
         }
-    buttons[4][1].setLabel("C");
-    buttons[4][2].setLabel("O");
-    buttons[4][3].setLabel("N");
-    buttons[4][4].setLabel("G");
-    buttons[4][5].setLabel("R");
-    buttons[4][6].setLabel("A");
-    buttons[4][7].setLabel("T");
-    buttons[4][8].setLabel("S");
+    buttons[4][1].setLabel("u");
+    buttons[4][3].setLabel("d");
+    buttons[4][4].setLabel("i");
+    buttons[4][5].setLabel("d");   
+    buttons[4][7].setLabel("o");
+    buttons[4][8].setLabel("k");
 }
-
 public class MSButton
 {
     private int r, c, colr;
